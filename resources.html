@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源推荐</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-brand">
+            <img src="assets/logo.svg" alt="Logo" class="logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="works.html">作品集</a>
+            <a href="about.html">关于我</a>
+            <a href="resources.html" class="active">资源</a>
+            <button class="lang-switch" onclick="toggleLanguage()">EN</button>
+        </div>
+    </nav>
+
+    <main class="container resources-page">
+        <header class="resources-header">
+            <h1>资源推荐</h1>
+            <p class="subtitle">分享我在设计和开发过程中发现的优质资源</p>
+        </header>
+
+        <section class="books-section">
+            <h2>书籍推荐</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="images/books/book1.jpg" alt="设计心理学">
+                    </div>
+                    <div class="book-info">
+                        <h3>设计心理学</h3>
+                        <p class="author">Donald A. Norman</p>
+                        <p class="description">
+                            这本书探讨了设计如何影响人们的日常生活，以及如何创造更好的用户体验。作者通过大量实例，展示了优秀设计的原则和方法。
+                        </p>
+                        <div class="book-tags">
+                            <span class="tag">用户体验</span>
+                            <span class="tag">交互设计</span>
+                            <span class="tag">心理学</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="images/books/book2.jpg" alt="Don't Make Me Think">
+                    </div>
+                    <div class="book-info">
+                        <h3>Don't Make Me Think</h3>
+                        <p class="author">Steve Krug</p>
+                        <p class="description">
+                            网页可用性设计的经典之作，书中提供了简单而实用的可用性原则，帮助设计师创建更直观的用户界面。
+                        </p>
+                        <div class="book-tags">
+                            <span class="tag">可用性</span>
+                            <span class="tag">网页设计</span>
+                            <span class="tag">用户体验</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tools-section">
+            <h2>工具箱推荐</h2>
+            <div class="tools-categories">
+                <div class="tool-category">
+                    <h3>设计工具</h3>
+                    <div class="tools-list">
+                        <div class="tool-card">
+                            <img src="images/tools/figma.png" alt="Figma">
+                            <div class="tool-info">
+                                <h4>Figma</h4>
+                                <p>专业的界面设计工具，支持实时协作</p>
+                                <a href="https://www.figma.com" target="_blank" class="tool-link">了解更多</a>
+                            </div>
+                        </div>
+
+                        <div class="tool-card">
+                            <img src="images/tools/sketch.png" alt="Sketch">
+                            <div class="tool-info">
+                                <h4>Sketch</h4>
+                                <p>Mac平台下强大的矢量设计工具</p>
+                                <a href="https://www.sketch.com" target="_blank" class="tool-link">了解更多</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-category">
+                    <h3>原型工具</h3>
+                    <div class="tools-list">
+                        <div class="tool-card">
+                            <img src="images/tools/framer.png" alt="Framer">
+                            <div class="tool-info">
+                                <h4>Framer</h4>
+                                <p>创建交互式原型和动画的理想工具</p>
+                                <a href="https://www.framer.com" target="_blank" class="tool-link">了解更多</a>
+                            </div>
+                        </div>
+
+                        <div class="tool-card">
+                            <img src="images/tools/principle.png" alt="Principle">
+                            <div class="tool-info">
+                                <h4>Principle</h4>
+                                <p>制作精美动画和交互原型</p>
+                                <a href="https://principleformac.com" target="_blank" class="tool-link">了解更多</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 All Rights Reserved</p>
+        <p>Coded in Cargo</p>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

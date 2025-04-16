@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xumeng's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-brand">
+            <img src="assets/logo.svg" alt="Logo" class="logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="works.html">Works</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
+            <button class="lang-switch" onclick="toggleLanguage()">EN</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+                <div class="hero-content">
+                    <div class="text-line">Hi, I'm Xumeng,<video autoplay loop muted playsinline class="avatar">
+                        <source src="assets/avatar.mp4" type="video/mp4">
+                    </video></div>
+                    <div class="text-line">a product designer <img src="assets/figmar.png" alt="Design Icon" class="icon">and an </div>
+                    <div class="text-line">and an AI coder <img src="assets/coder.png" alt="Code Icon" class="icon">.I aim to bridge </div>
+                    <div class="text-line">people and technology <span class="emoji">😊✨💻through </span></div>
+                    <div class="text-line">thoughtful <img src="assets/thinking.png" alt="thinking" class="icon">.and gentle design</span><span class="emoji"></span>.</div>
+                </div>
+        </section>
+
+        <section class="section">
+            <h2>My Works</h2>
+            <div class="works-grid">
+                <!-- 第一列 -->
+                <div class="works-column">
+                    <div class="works-track">
+                        <div class="work-item" style="background-image: url('assets/homeworks/work1.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work2.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work3.jpg')"></div>
+                        <!-- 重复项用于无缝滚动 -->
+                        <div class="work-item" style="background-image: url('assets/homeworks/work1.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work2.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work3.jpg')"></div>
+                    </div>
+                </div>
+
+                <!-- 第二列 -->
+                <div class="works-column">
+                    <div class="works-track">
+                        <div class="work-item" style="background-image: url('assets/homeworks/work4.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work5.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work6.jpg')"></div>
+                        <!-- 重复项用于无缝滚动 -->
+                        <div class="work-item" style="background-image: url('assets/homeworks/work4.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work5.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work6.jpg')"></div>
+                    </div>
+                </div>
+
+                <!-- 第三列 -->
+                <div class="works-column">
+                    <div class="works-track">
+                        <div class="work-item" style="background-image: url('assets/homeworks/work7.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work8.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work9.jpg')"></div>
+                        <!-- 重复项用于无缝滚动 -->
+                        <div class="work-item" style="background-image: url('assets/homeworks/work7.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work8.jpg')"></div>
+                        <div class="work-item" style="background-image: url('assets/homeworks/work9.jpg')"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="works.html" class="more-works">More recommended reads →</a>
+        </section>
+
+
+        <section class="section">
+            <div class="tag-container">Design Philosophy</div>
+            <div class="philosophy-container">
+                <div class="philosophy-list-container">
+                    <ul class="philosophy-list">
+                        <li class="active" data-key="human-centered">Human-centered Design</li>
+                        <li data-key="simplify">Simplify Complexity</li>
+                        <li data-key="invisible">Invisible Design</li>
+                        <li data-key="emotional">Useful + Emotional</li>
+                        <li data-key="product">Design for Product Thinking</li>
+                    </ul>
+                </div>
+                <div class="philosophy-content">
+                    <div class="content-wrapper">
+                        <h2 class="philosophy-title">Design always starts with the user — their needs, motivations, emotions, and context.</h2>
+                        <img src="assets/philosophy/design-illustration.png" alt="Design Philosophy Illustration" class="philosophy-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+        <section class="contact">
+            <h2>Got a project?</h2>
+            <p>Discover how we could work together :}</p>
+            <div class="contact-button-container">
+                <button class="get-in-touch"><span>Get in toch</span></button>
+                <div class="contact-avatars">
+                    <img src="assets/contact/avatar-1.png" alt="Avatar" class="contact-avatar">
+                    <img src="assets/contact/avatar-2.png" alt="Avatar" class="contact-avatar">
+                    <img src="assets/contact/avatar-3.png" alt="Avatar" class="contact-avatar">
+                    <img src="assets/contact/avatar-4.png" alt="Avatar" class="contact-avatar">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Made by Zhang Xumeng</p>
+        <p>Created in China</p>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
