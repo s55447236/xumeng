@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>资源推荐</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/resources.css">
 </head>
 <body>
     <nav class="nav">
@@ -12,107 +13,190 @@
             <img src="assets/logo.svg" alt="Logo" class="logo">
         </div>
         <div class="nav-links">
-            <a href="index.html">首页</a>
-            <a href="works.html">作品集</a>
-            <a href="about.html">关于我</a>
-            <a href="resources.html" class="active">资源</a>
+            <a href="index.html">Home</a>
+            <a href="works.html">Works</a>
+            <a href="about.html">About</a>
+            <a href="resources.html" class="active">Resources</a>
             <button class="lang-switch" onclick="toggleLanguage()">EN</button>
         </div>
     </nav>
 
-    <main class="container resources-page">
-        <header class="resources-header">
-            <h1>资源推荐</h1>
-            <p class="subtitle">分享我在设计和开发过程中发现的优质资源</p>
-        </header>
-
-        <section class="books-section">
-            <h2>书籍推荐</h2>
+    <main class="container">
+        <section class="section">
+            <div class="hero-resources">
+                <h2 class="title-sub">Books that shaped my thinking as a designer — insightful, practical, and timeless reads that I return to often.</h2>
+            </div>
             <div class="books-grid">
                 <div class="book-card">
-                    <div class="book-cover">
-                        <img src="images/books/book1.jpg" alt="设计心理学">
-                    </div>
-                    <div class="book-info">
-                        <h3>设计心理学</h3>
-                        <p class="author">Donald A. Norman</p>
-                        <p class="description">
-                            这本书探讨了设计如何影响人们的日常生活，以及如何创造更好的用户体验。作者通过大量实例，展示了优秀设计的原则和方法。
-                        </p>
-                        <div class="book-tags">
-                            <span class="tag">用户体验</span>
-                            <span class="tag">交互设计</span>
-                            <span class="tag">心理学</span>
-                        </div>
-                    </div>
+                    <img src="assets/books/dont-make-me-think.jpg" alt="Don't Make Me Think">
+                    <div class="item-title">Don't Make Me Think</div>
+                    <p>Steve Krug</p>
                 </div>
-
                 <div class="book-card">
-                    <div class="book-cover">
-                        <img src="images/books/book2.jpg" alt="Don't Make Me Think">
+                    <img src="assets/books/hooked.jpg" alt="Hooked">
+                    <div class="item-title">Hooked: How to Build Habit-Forming Products</div>
+                    <p>Nir Eyal</p>
+                </div>
+                <div class="book-card">
+                    <img src="assets/books/grid-systems.jpg" alt="Grid Systems">
+                    <div class="item-title">平面设计中的网格系统</div>
+                    <p>约瑟夫·米勒-布罗克曼</p>
+                </div>
+                <div class="book-card">
+                    <img src="assets/books/design-thinking.jpg" alt="Design Thinking">
+                    <div class="item-title">Introduction to Design Thinking for UX Beginners</div>
+                    <p>Jiun Park</p>
+                </div>
+            </div>
+            
+            <a href="#" class="more-link">More recommended reads →</a>
+        </section>
+
+        <section class="section">
+            <div class="hero-resources">
+                <h2 class="title-sub">Here are some of the tools I rely on daily — tried, trusted, and highly recommended for any designer looking to work smarter.</h2>
+            </div>
+            <div class="tools-category">
+                <h2 class="title-sub">AI Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="assets/tools/midjourney.png" alt="Midjourney">
+                        <div class="item-title">
+                            <h4>Midjourney</h4>
+                            <p>文生图工具，适合概念草图和视觉灵感</p>
                     </div>
-                    <div class="book-info">
-                        <h3>Don't Make Me Think</h3>
-                        <p class="author">Steve Krug</p>
-                        <p class="description">
-                            网页可用性设计的经典之作，书中提供了简单而实用的可用性原则，帮助设计师创建更直观的用户界面。
-                        </p>
-                        <div class="book-tags">
-                            <span class="tag">可用性</span>
-                            <span class="tag">网页设计</span>
-                            <span class="tag">用户体验</span>
-                        </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/chatgpt.png" alt="ChatGPT">
+                        <h4>ChatGPT</h4>
+                        <p>高可用的中文对话产品生成好帮手</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/cursor.png" alt="Cursor">
+                        <h4>Cursor</h4>
+                        <p>有助加快开发进度，可深度整合到 VSCode 中</p>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="tools-section">
-            <h2>工具箱推荐</h2>
-            <div class="tools-categories">
-                <div class="tool-category">
-                    <h3>设计工具</h3>
-                    <div class="tools-list">
-                        <div class="tool-card">
-                            <img src="images/tools/figma.png" alt="Figma">
-                            <div class="tool-info">
-                                <h4>Figma</h4>
-                                <p>专业的界面设计工具，支持实时协作</p>
-                                <a href="https://www.figma.com" target="_blank" class="tool-link">了解更多</a>
-                            </div>
-                        </div>
-
-                        <div class="tool-card">
-                            <img src="images/tools/sketch.png" alt="Sketch">
-                            <div class="tool-info">
-                                <h4>Sketch</h4>
-                                <p>Mac平台下强大的矢量设计工具</p>
-                                <a href="https://www.sketch.com" target="_blank" class="tool-link">了解更多</a>
-                            </div>
-                        </div>
+            <div class="tools-category">
+                <h3>Design Tools</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="assets/tools/tailwind.png" alt="Tailwind CSS">
+                        <h4>Tailwind CSS</h4>
+                        <p>基于 CSS 的框架，能高效写出优质的样式</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/coolors.png" alt="Coolors">
+                        <h4>Coolors</h4>
+                        <p>配色神器，一键生成配色</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/tinypng.png" alt="TinyPNG">
+                        <h4>TinyPNG</h4>
+                        <p>在线图片压缩工具，最大限度减小文件大小</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/remove-bg.png" alt="Remove.bg">
+                        <h4>Remove.bg</h4>
+                        <p>一键抠图工具，无需繁杂的PS操作</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/uiverse.png" alt="Uiverse">
+                        <h4>Uiverse</h4>
+                        <p>在线 UI 动效制作，支持 Tailwind 导出</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/animista.png" alt="Animista">
+                        <h4>Animista</h4>
+                        <p>CSS 动效效果生成器</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/smallpdf.png" alt="Smallpdf">
+                        <h4>smallpdf</h4>
+                        <p>PDF 编辑转换生成器</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="tool-category">
-                    <h3>原型工具</h3>
-                    <div class="tools-list">
-                        <div class="tool-card">
-                            <img src="images/tools/framer.png" alt="Framer">
-                            <div class="tool-info">
-                                <h4>Framer</h4>
-                                <p>创建交互式原型和动画的理想工具</p>
-                                <a href="https://www.framer.com" target="_blank" class="tool-link">了解更多</a>
-                            </div>
-                        </div>
+            <div class="tools-category">
+                <h3>Icon Resources</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="assets/tools/heroicons.png" alt="Heroicons">
+                        <h4>heroicons</h4>
+                        <p>免费多样图标组，风格统一</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/remixicon.png" alt="Remixicon">
+                        <h4>Remixicon</h4>
+                        <p>高可用的中文对话产品生成好帮手</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/iconify.png" alt="Iconify">
+                        <h4>Iconify</h4>
+                        <p>有助加快开发进度，可深度整合到 VSCode 中</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/simple-icons.png" alt="Simple Icons">
+                        <h4>Simple Icons</h4>
+                        <p>简约风格图标 Logo，适合各种场景</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/streamline.png" alt="Streamline">
+                        <h4>Streamline</h4>
+                        <p>高质量图标库，提供多种风格和格式选择</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/iconpark.png" alt="IconPark">
+                        <h4>IconPark</h4>
+                        <p>免费多样图标组，风格统一</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/phosphor.png" alt="Phosphor Icons">
+                        <h4>Phosphor Icons</h4>
+                        <p>免费多样图标组，风格统一</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/icons8.png" alt="Icons8">
+                        <h4>Icons8</h4>
+                        <p>图标大全，提供全套</p>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="tool-card">
-                            <img src="images/tools/principle.png" alt="Principle">
-                            <div class="tool-info">
-                                <h4>Principle</h4>
-                                <p>制作精美动画和交互原型</p>
-                                <a href="https://principleformac.com" target="_blank" class="tool-link">了解更多</a>
-                            </div>
-                        </div>
+            <div class="tools-category">
+                <h3>Visual Assets</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="assets/tools/pexels.png" alt="Pexels">
+                        <h4>Pexels</h4>
+                        <p>免费图库，高清无限</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/unsplash.png" alt="Unsplash">
+                        <h4>Unsplash</h4>
+                        <p>免费，高清，风格自然</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/pixabay.png" alt="Pixabay">
+                        <h4>Pixabay</h4>
+                        <p>图片，插画，视频，音频全都有</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/blush.png" alt="Blush Design">
+                        <h4>blush.design</h4>
+                        <p>插画生成器，可以自定义颜色，姿势，表情等</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/lottie.png" alt="LottieFiles">
+                        <h4>LottieFiles</h4>
+                        <p>动效动画制作，体积小，效果好</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/opendoodles.png" alt="Open Doodles">
+                        <h4>opendoodles</h4>
+                        <p>手绘风格，开源插画</p>
                     </div>
                 </div>
             </div>
@@ -120,8 +204,8 @@
     </main>
 
     <footer>
-        <p>© 2024 All Rights Reserved</p>
-        <p>Coded in Cargo</p>
+        <p>© 2024 Made by Zhang Xumeng</p>
+        <p>Created in China</p>
     </footer>
 
     <script src="js/translations.js"></script>

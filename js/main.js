@@ -26,8 +26,8 @@ function initLanguage() {
     if (langButton) {
         langButton.addEventListener('click', toggleLanguage);
     }
-    }
-    
+}
+
 function toggleLanguage() {
     state.currentLang = state.currentLang === 'en' ? 'zh' : 'en';
     localStorage.setItem('preferredLanguage', state.currentLang);
@@ -53,87 +53,95 @@ function updateContent() {
 }
 
 // 设计理念功能
-const philosophyData = {
-    'human-centered': {
-        title: 'Design always starts with the user — their needs, motivations, emotions, and context.',
-        image: 'assets/philosophy/design-illustration.png'
-    },
-    'simplify': {
-        title: 'My mission is to make complex systems clear, usable — even elegant.',
-        image: 'assets/philosophy/simplify-illustration.png'
-    },
-    'invisible': {
-        title: 'The best design is invisible — it just works.',
-        image: 'assets/philosophy/invisible-illustration.png'
-    },
-    'emotional': {
-        title: 'Create experiences that are both useful and emotionally engaging.',
-        image: 'assets/philosophy/emotional-illustration.png'
-    },
-    'product': {
-        title: 'Think beyond the interface — design for the whole product experience.',
-        image: 'assets/philosophy/product-illustration.png'
-    }
-};
-
 function initPhilosophy() {
     console.log('Initializing philosophy section...');
     
-    const items = document.querySelectorAll('.philosophy-list li');
-    const title = document.querySelector('.philosophy-title');
-    const image = document.querySelector('.philosophy-image');
+    const philosophyItems = document.querySelectorAll('.philosophy-item');
+    const philosophyContent = document.querySelector('.philosophy-content');
+    let currentGradientBg = document.querySelector('.gradient-bg');
+    let isAnimating = false;
     
-    if (!items.length || !title || !image) {
+    if (!philosophyItems.length || !philosophyContent) {
         console.warn('Some philosophy elements not found');
         return;
     }
 
-    // 为每个列表项设置 data-text 属性
-    items.forEach(item => {
-        const text = item.textContent;
-        item.setAttribute('data-text', text);
-    });
+    const philosophyContents = {
+        1: "Successful design relies not only on creativity but also on efficient cross-functional collaboration. I value understanding needs from multiple perspectives—product, engineering, operations—and proactively drive alignment within the team to ensure our design direction always serves the end-user experience.",
+        2: "In a world of increasing complexity, my role is to bring clarity. I break down complex problems into manageable components and create intuitive solutions that users can easily understand and navigate.",
+        3: "Every design decision impacts user behavior and business outcomes. I approach design systematically, making informed decisions based on research, data, and business objectives.",
+        4: "The smallest details can have the biggest impact. I take responsibility for every pixel, interaction, and user flow, ensuring they all contribute to a cohesive and delightful user experience.",
+        5: "The design field evolves rapidly. I stay current through continuous learning, self-reflection, and adaptation, using each project as an opportunity to grow and improve."
+    };
 
     function switchContent(index) {
+        if (isAnimating) return;
+        isAnimating = true;
+
         // 移除所有激活状态
-        items.forEach(item => {
+        philosophyItems.forEach(item => {
             item.classList.remove('active');
         });
         
         // 激活当前项
-        const currentItem = items[index];
-        currentItem.classList.add('active');
-        
-        // 获取对应的key
-        const key = currentItem.getAttribute('data-key');
-        const data = philosophyData[key];
-        
-        if (!data) {
-            console.warn('No data found for key:', key);
-            return;
-        }
+        philosophyItems[index].classList.add('active');
 
-        // 更新内容
-        title.style.opacity = '0';
-        image.classList.remove('show');
+        // 创建新的渐变背景元素
+        const newGradientBg = document.createElement('div');
+        newGradientBg.className = 'gradient-bg';
+        newGradientBg.setAttribute('data-index', index + 1);
         
+        // 将文本内容包裹在p标签中
+        const textContent = document.createElement('p');
+        textContent.textContent = philosophyContents[index + 1];
+        newGradientBg.appendChild(textContent);
+        
+        // 将新元素添加到内容容器
+        philosophyContent.appendChild(newGradientBg);
+        
+        // 强制浏览器重排
+        void newGradientBg.offsetWidth;
+        
+        // 添加进入动画类
+        requestAnimationFrame(() => {
+            newGradientBg.classList.add('enter');
+        });
+        
+        // 如果存在当前背景，添加退出动画
+        if (currentGradientBg) {
+            const oldBg = currentGradientBg;
+            oldBg.classList.add('exit');
+            oldBg.addEventListener('transitionend', function handler() {
+                if (oldBg !== currentGradientBg) {
+                    oldBg.remove();
+                }
+                oldBg.removeEventListener('transitionend', handler);
+            });
+        }
+        
+        // 更新当前背景引用
+        currentGradientBg = newGradientBg;
+        
+        // 动画结束后重置状态
         setTimeout(() => {
-            title.textContent = data.title;
-            image.src = data.image;
-            title.style.opacity = '1';
-            image.classList.add('show');
-        }, 300);
+            isAnimating = false;
+        }, 800);
     }
 
     // 点击事件
-    items.forEach((item, index) => {
+    philosophyItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             switchContent(index);
         });
     });
 
     // 初始化第一项
-    switchContent(0);
+    if (!currentGradientBg) {
+        switchContent(0);
+    } else {
+        currentGradientBg.setAttribute('data-index', '1');
+        currentGradientBg.classList.add('enter');
+    }
 }
 
 // 滚动效果功能
@@ -180,7 +188,6 @@ function initScrollEffect() {
 
 // UI 相关功能初始化
 function initUI() {
-    initializePhilosophySection();
     initializeToolsSlider();
 }
 

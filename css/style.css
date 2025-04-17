@@ -97,32 +97,53 @@ body {
 
 .container {
     max-width: var(--max-width);
-    margin: 0 auto;
+    margin: 0 12rem;
     position: relative;
+    gap: 10rem;
 }
 
 .section {
+    display: flex;
+    flex-direction: column;   /* 垂直排列 */
+    gap: 2rem;
+    padding: 8rem 0;
     position: relative;
     width: 100%;
-    padding: 8rem 4rem;
-    align-items: center;                     /* 垂直居中 */
 }
-
 .divider {
-    border: 1px solid #ff0000;
-    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
 }
 
 .tag-container {
     font-size: 1.2rem;
-    color: #999;
-    margin-bottom: 2rem;
+    color: var(--tertiary-color);
 }
 
-h2 {
+.title-sub {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
 }
+
+.item-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.more-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.more-link:hover {
+    text-decoration: underline;
+}
+
 
 /* ==========================================================================
    英雄区域（首页顶部区域）
@@ -175,91 +196,6 @@ h2 {
     flex-shrink: 0; /* 防止图片被压缩 */
 }
 
-/* ==========================================================================
-   设计理念部分
-   ========================================================================== */
-
-/* 设计理念部分容器 */
-.philosophy-container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;  /* 左边占1份，右边占3份 */
-    gap: 4rem;                       /* 左右两栏之间的间距 */
-    padding: 0rem 0;
-    align-items: start;              /* 顶部对齐 */
-}
-
-/* 左侧列表容器 */
-.philosophy-list-container {
-    grid-column: 1 / 2;             /* 占据第一列 */
-    position: sticky;               /* 使列表在滚动时保持固定 */
-}
-
-/* 右侧内容区域 */
-.philosophy-content {
-    grid-column: 2 / 3;             /* 占据第二列 */
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-/* 设计理念列表的基础样式 */
-.philosophy-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;        /* 垂直排列 */
-    gap: 1rem;                    /* 增加间距，从0.2rem改为1rem */
-    align-items: flex-start;      /* 左对齐 */
-    width: 100%;                  /* 占满容器宽度 */
-}
-
-/* 列表项的样式设置 */
-.philosophy-list li {
-    font-size: 1.2rem;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    color: var(--primary-color);
-    border-radius: 100px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center;
-    display: inline-block;     /* ✅ 保持内容宽度自适应 */
-    background-color: transparent;
-    white-space: nowrap;       /* ✅ 防止文字换行导致宽度撑开 */
-}
-
-/* 鼠标悬停时加一点浅灰背景 */
-.philosophy-list li:hover {
-    background-color: rgba(0, 0, 0, 0.06);
-}
-
-/* 激活状态：黑底白字 */
-.philosophy-list li.active {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    font-weight: 500;
-}
-
-/* 可选：激活状态悬停不变色 */
-.philosophy-list li.active:hover {
-    background-color: #1a1a1a;
-}
-
-.philosophy-title {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 4rem;
-    transition: opacity 0.3s ease;
-}
-
-.philosophy-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    gap: 0.1rem;  /* 按照要求调整间距 */
-}
-
-.philosophy-image.show {
-    opacity: 1;
-}
 
 /* ==========================================================================
    作品展示区域
@@ -346,19 +282,6 @@ h2 {
     100% {
         transform: translateY(0);
     }
-}
-
-.more-works {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--primary-color);
-    margin-top: 1.5rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.more-works:hover {
-    color: var(--accent-color);
 }
 
 /* ==========================================================================
@@ -561,46 +484,6 @@ footer {
     color: var(--tertiary-color);            /* 使用较浅的颜色，降低视觉重要性 */
 }
 
-/* ==========================================================================
-   工具箱部分
-   ========================================================================== */
-
-.tools-section {
-    margin: 6rem 0;
-}
-
-.tools-track {
-    display: flex;
-    gap: 20px;                               /* 工具图标之间的间距 */
-    padding-right: 40px;                     /* 右侧内边距，为动画留出空间 */
-    animation: slideTools 20s linear infinite;  /* 无限循环的滑动动画 */
-}
-
-@keyframes slideTools {
-    0% {
-        transform: translateX(0);             /* 起始位置 */
-    }
-    100% {
-        transform: translateX(calc(-100% - 40px));  /* 结束位置，考虑内边距 */
-    }
-}
-
-.tools-track:hover {
-    animation-play-state: paused;            /* 悬停时暂停动画 */
-}
-
-.tools-track img {
-    width: 68px;
-    height: 68px;
-    object-fit: contain;                     /* 保持图片比例 */
-    flex-shrink: 0;                          /* 防止图片被压缩 */
-    border-radius: 8px;                      /* 圆角图标 */
-    transition: transform 0.3s ease;         /* 缩放过渡动画 */
-}
-
-.tools-track img:hover {
-    transform: scale(1.1);                   /* 悬停时放大 */
-}
 
 /* 作品集页面样式 */
 .works-page {
@@ -729,186 +612,4 @@ footer {
     color: var(--secondary-color);
 }
 
-/* 书籍部分样式 */
-.books-section {
-    margin-bottom: 100px;
-}
 
-/* 书籍标题样式 */
-.books-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    font-weight: 500;
-}
-
-/* 书籍网格布局 */
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.book-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.book-card:hover {
-    transform: translateY(-5px);
-}
-
-.book-cover {
-    position: relative;
-    padding-top: 140%;
-    overflow: hidden;
-    background: #f5f5f5;
-}
-
-.book-cover img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.book-info {
-    padding: 30px;
-}
-
-.book-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.book-info .author {
-    color: var(--accent-color);
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-.book-info .description {
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.book-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tools-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 60px;
-}
-
-.tool-category h3 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: var(--primary-color);
-}
-
-.tools-list {
-    display: grid;
-    gap: 30px;
-}
-
-.tool-card {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.tool-card:hover {
-    transform: translateY(-3px);
-}
-
-.tool-card img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-right: 20px;
-}
-
-.tool-info {
-    flex: 1;
-}
-
-.tool-info h4 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.tool-info p {
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
-.tool-link {
-    display: inline-block;
-    color: var(--accent-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.tool-link:hover {
-    color: var(--primary-color);
-}
-
-.content-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.philosophy-title {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 4rem;
-    font-weight: 500;
-}
-
-.philosophy-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-}
-
-.get-in-touch::before {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    top: var(--y, 50%);
-    left: var(--x, 50%);
-    background: #004cd0;
-    border-radius: 50%;
-    transform-origin: center;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    z-index: 1;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-}
-
-.get-in-touch:hover::before {
-    transform: translate(-50%, -50%) scale(60);
-    opacity: 1;
-}
-
-.get-in-touch.animating::before {
-    transform: translate(-50%, -50%) scale(60);
-    opacity: 0;
-}

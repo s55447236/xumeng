@@ -1,0 +1,236 @@
+/* ==========================================================================
+   首页样式
+   ========================================================================== */
+
+
+/* 设计理念部分 */
+.philosophy-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 4rem;
+    padding: 0rem 0;
+    align-items: start;
+}
+
+.philosophy-list-container {
+    grid-column: 1 / 2;
+    position: sticky;
+    top: 100px;
+}
+
+.philosophy-content {
+    grid-column: 2 / 3;
+    opacity: 1;
+}
+
+.philosophy-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.philosophy-list li {
+    padding: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.philosophy-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.philosophy-list li.active {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+.philosophy-list li.active:hover {
+    background: var(--primary-color);
+}
+
+.philosophy-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.philosophy-image {
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.philosophy-image.show {
+    opacity: 1;
+}
+
+/* 作品展示部分 */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.works-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.works-track {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: scrollUp 20s linear infinite;
+}
+
+.works-column:nth-child(2) .works-track {
+    animation: scrollDown 25s linear infinite;
+}
+
+.works-column:nth-child(1) .works-track,
+.works-column:nth-child(3) .works-track {
+    animation: scrollUp 30s linear infinite;
+}
+
+.work-item {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+@keyframes scrollUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes scrollDown {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* 更多作品按钮 */
+.more-works {
+    display: inline-block;
+    margin-top: 4rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.more-works:hover {
+    color: var(--accent-color);
+}
+
+/* 联系部分 */
+.contact {
+    text-align: center;
+    padding: 8rem 0;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 4rem;
+}
+
+.contact-button-container {
+    display: inline-block;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.get-in-touch {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.get-in-touch:hover {
+    transform: translateY(-2px);
+}
+
+.get-in-touch:active {
+    transform: translateY(0);
+}
+
+.get-in-touch span {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.get-in-touch:hover span {
+    transform: translateX(5px);
+}
+
+.get-in-touch:active span {
+    transform: translateX(0);
+}
+
+/* 工具栏部分 */
+.tools-section {
+    overflow: hidden;
+}
+
+.tools-track {
+    display: flex;
+    gap: 2rem;
+    animation: slideTools 20s linear infinite;
+}
+
+@keyframes slideTools {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.tools-track:hover {
+    animation-play-state: paused;
+}
+
+.tools-track img {
+    height: 2rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.tools-track img:hover {
+    opacity: 1;
+    filter: none;
+} 

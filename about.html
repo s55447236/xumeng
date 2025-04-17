@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/translations.js"></script>
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
     <nav class="nav">
@@ -14,150 +13,169 @@
             <img src="assets/logo.svg" alt="Logo" class="logo">
         </div>
         <div class="nav-links">
-            <a href="index.html" data-lang="home">首页</a>
-            <a href="works.html" data-lang="works">作品集</a>
-            <a href="about.html" data-lang="about" class="active">关于我</a>
-            <a href="resources.html" data-lang="resources">资源</a>
+            <a href="index.html">Home</a>
+            <a href="works.html">Works</a>
+            <a href="about.html" class="active">About</a>
+            <a href="resources.html">Resources</a>
             <button class="lang-switch" onclick="toggleLanguage()">EN</button>
         </div>
     </nav>
 
-    <main class="container about-page">
-        <section class="about-section">
-            <div class="title-item">Who I am?</div>
-            <div class="description-h1">
-                Interdisciplinary  product researcher & designer , currently reading，curating,and listening to.I love to use lots of interactive design , 3D , behavioral based research , and other  experimental elements to create ideal launches. 
+    <main class="container">
+        <section class="section">
+            <div class="tag-container">Who is Xumeng?</div>
+            <div class="title-sub">
+                Interdisciplinary product researcher & designer, currently reading, curating, and listening to. I love to use lots of interactive design, 3D, behavioral based research, and other experimental elements to create ideal launches.
             </div>
         </section>
-        <br>
-      
-        <hr class="divider">
 
-        <section class="tools-section">
+        <hr class="divider"> 
+
+
+        <section class="section">
             <div class="tools-layout">
-                <div class="tools-title">Tools</div>
+              
+                <div class="title-sub">Tools</div>
                 <div class="tools-content">
                     <div class="tools-track">
-                        <img src="images/tools/figma.png" alt="Figma">
-                        <img src="images/tools/sketch.png" alt="Sketch">
-                        <img src="images/tools/illustrator.png" alt="Adobe Illustrator">
-                        <img src="images/tools/AE.png" alt="Adobe After Effects">
-                        <img src="images/tools/blender.png" alt="Blender">
-                        <img src="images/tools/webflow.png" alt="Webflow">
-                        <img src="images/tools/notion.png" alt="Notion">
-                        <img src="images/tools/github.png" alt="GitHub">
-                        <img src="images/tools/vscode.png" alt="VS Code">
-                        <img src="images/tools/cursor.png" alt="Cursor">
+                        <!-- 第一组图标 -->
+                        <img src="assets/tools/figma.png" alt="Figma">
+                        <img src="assets/tools/cursor.png" alt="Cursor">
+                        <img src="assets/tools/github.png" alt="GitHub">
+                        <img src="assets/tools/blender.png" alt="Blender">
+                        <img src="assets/tools/ae.png" alt="After Effects">
+                        <img src="assets/tools/illustrator.png" alt="Illustrator">
+                        <img src="assets/tools/sketch.png" alt="Sketch">
+                        <img src="assets/tools/notion.png" alt="Notion"> 
+                        <img src="assets/tools/webflow.png" alt="Webflow">
+                        <!-- 重复的图标组用于无缝滚动 -->
+                        <img src="assets/tools/figma.png" alt="Figma">
+                        <img src="assets/tools/cursor.png" alt="Cursor">
+                        <img src="assets/tools/github.png" alt="GitHub">
+                        <img src="assets/tools/blender.png" alt="Blender">
+                        <img src="assets/tools/ae.png" alt="After Effects">
+                        <img src="assets/tools/illustrator.png" alt="Illustrator">
+                        <img src="assets/tools/sketch.png" alt="Sketch">
+                        <img src="assets/tools/notion.png" alt="Notion"> 
+                        <img src="assets/tools/webflow.png" alt="Webflow">
                     </div>
                 </div>
             </div>
-        </section>
-
-        <hr class="divider">
-
-
-        <section class="tools-section">
             <div class="tools-layout">
-                <div class="tools-title">Experience</div>
-                <div class="grid-content">  
+                <div class="title-sub">Experience</div>
+                <div class="grid-content">
                     <div class="grid-item">
                         <div class="item-title">Product Designer</div>
-                        <div class="item-text">@RocketCode</div>
-                        <div class="item-text">2021-2023</div>
+                        <div class="item-text">@EB TECH</div>
+                        <div class="item-text">2023-2025</div>
                     </div>
                     <div class="grid-item">
-                        <div class="item-title">Product Designer</div>
-                        <div class="item-text">@RocketCode</div>
-                        <div class="item-text">2021-2023</div>
+                        <div class="item-title">UI/UX Team Manager</div>
+                        <div class="item-text">@China Transinfo</div>
+                        <div class="item-text">2020-2023</div>
                     </div>
                     <div class="grid-item">
-                        <div class="item-title">Product Designer</div>
-                        <div class="item-text">@RocketCode</div>
-                        <div class="item-text">2021-2023</div>
+                        <div class="item-title">Visual Design Lead</div>
+                        <div class="item-text">@Terminus</div>
+                        <div class="item-text">2016-2019</div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="tools-section">
             <div class="tools-layout">
-                <div class="tools-title">Skills</div>
-                <div class="grid-content">  
+                <div class="title-sub">Skills</div>
+                <div class="grid-content">
                     <div class="grid-item">
                         <div class="item-text">Prototyping</div>
                         <div class="item-text">UX/UI Design</div>
                         <div class="item-text">HTML, CSS, JS</div>
                     </div>
                     <div class="grid-item">
-                        <div class="item-text">Interaction Design,</div>
-                        <div class="item-text">Design Systems</div>
+                        <div class="item-text">Interaction Design</div>
+                        <div class="item-text">User Interviews</div>
+                        <div class="item-text">3D,Design Systems</div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="item-text">User Research</div>
+                        <div class="item-text">UI Design</div>
                         <div class="item-text">Motion Design</div>
                     </div>
-                    <div class="grid-item">
-                        <div class="item-text">User Research,</div>
-                        <div class="item-text">Competitive Analysis, </div>
-                        <div class="item-text">User Interviews</div>
-                    </div>
                 </div>
             </div>
-        </section>
-   
-        <section class="tools-section">
             <div class="tools-layout">
-                <div class="tools-title">Other</div>
-                <div class="grid-content">  
+                <div class="title-sub">Other</div>
+                <div class="grid-content">
                     <div class="grid-item">
-                        <div class="item-text">Webflow</div>
-                        <div class="item-text">3D Design</div>
-                        <div class="item-text">Sketchbook</div>
+                        <div class="item-text">Led UI to product design shift </div>
+                        <div class="item-text">Shaped product strategy</div>
                     </div>
                     <div class="grid-item">
-                        <div class="item-text">Swift Playground</div>
-                        <div class="item-text">Vectary</div>
-                        <div class="item-text">Google Workspace                        </div>
+                        <div class="item-text">Voted Best Employee of 2021</div>
+                        <div class="item-text">Led Cesium adoption</div>
+                        <div class="item-text">Secured ¥130M project</div>
                     </div>
                     <div class="grid-item">
-                        <div class="item-text">Cargo</div>
-                        <div class="item-text">Blender</div>
-                        <div class="item-text">Slack</div>
+                        <div class="item-text">Promoted for 2 consecutive years</div>
+                        <div class="item-text">Awarded company equity</div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <hr class="divider">
 
-        <section class="about-section">
-            <div class="tools-title">Brands I've Worked With</div>
-            <div class="brands-container">
-                <div class="brands-grid">
-                    <img src="images/brands/heroe.png" alt="héroe">
-                    <img src="images/brands/claims-asap.png" alt="claimsASAP">
-                    <img src="images/brands/coru.png" alt="Coru">
-                    <img src="images/brands/coba.png" alt="Coba">
-                    <img src="images/brands/credis.png" alt="Credis">
-                    <img src="images/brands/creze.png" alt="Creze">
-                    <img src="images/brands/cobank.png" alt="CoBank">
-                    <img src="images/brands/solventatech.png" alt="Solventatech">
+        <hr class="divider"> 
+
+        <section class="section">
+            <div class="title-sub">What I Stand For at Work</div>
+            <div class="philosophy-container">
+                <div class="philosophy-list">
+                    <div class="philosophy-item active">
+                        <span class="number">1.</span>
+                        <span class="text">User-centered, team-oriented</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="philosophy-item">
+                        <span class="number">2.</span>
+                        <span class="text">Clarity in complexity</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="philosophy-item">
+                        <span class="number">3.</span>
+                        <span class="text">Design is not decoration, but decision-making</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="philosophy-item">
+                        <span class="number">4.</span>
+                        <span class="text">Details reflect responsibility</span>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="philosophy-item">
+                        <span class="number">5.</span>
+                        <span class="text">Continuous learning and reflection as the foundation for growth</span>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+                <div class="philosophy-content active">
+                    <div class="gradient-bg">
+                        Successful design relies not only on creativity but also on efficient cross-functional collaboration. I value understanding needs from multiple perspectives—product, engineering, operations—and proactively drive alignment within the team to ensure our design direction always serves the end-user experience.
+                    </div>
                 </div>
             </div>
         </section>
 
-        <hr class="divider">
+        <hr class="divider"> 
 
-        <section class="about-section">
+        <section class="section">
             <div class="item-text">
-                Hey, thanks for visiting. You’ve probably looked through a lot of portfolios today, either because you’re a fellow tech nerd going crazy with comparison, or are working hard to find a new team member for hire. Here’s a reminder to take it easy, to stretch if you’ve been sitting for a while, and to eat a nice meal today if you haven’t yet! 
+                Hey, thanks for visiting. You've probably looked through a lot of portfolios today, either because you're a fellow tech nerd going crazy with comparison, or are working hard to find a new team member for hire. Here's a reminder to take it easy, to stretch if you've been sitting for a while, and to eat a nice meal today if you haven't yet!
             </div>
         </section>
-
     </main>
 
     <footer>
-        <p>© 2024 All Rights Reserved</p>
-        <p>Coded in Cargo</p>
+        <p>© 2024 Made by Zhang Xumeng</p>
+        <p>Created in China</p>
     </footer>
 
-
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html> 
